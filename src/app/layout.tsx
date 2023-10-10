@@ -1,6 +1,14 @@
 import ThemeProvider from "@/providers/ThemeProvider";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  weight: ["400", "500"],
+  style: ["normal"],
+  subsets: ["latin"],
+  variable: "--poppins",
+});
 
 export const metadata: Metadata = {
   title: "Shey Shop - Next Dev",
@@ -14,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>
+      <body className={poppins.variable}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
